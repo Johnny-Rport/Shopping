@@ -1,0 +1,2 @@
+# Shopping Site
+This site is fake, nothing can be bought for real. I am creating this mock shopping site in order to improve my javascript, design, and general backend skills. All in all, this website will contain various items to put into a cart, that then adds to a total, I am using react to make this faster and to improve my react skills.
