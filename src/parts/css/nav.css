@@ -1,0 +1,45 @@
+.header {
+    font-size: x-large;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: hsl(200, 100%, 50%);
+}
+
+a {
+    background-color: transparent;
+}
+
+.menu {
+    border: none;
+    color: transparent;
+    background-color: white;
+    background-image: url(./menu.png);
+    background-size: 100% 100%;
+    padding: 0.2rem;
+    margin-right: 6rem;
+    border-radius: 10%;
+}
+
+.menu:active {
+    padding: 0.1vw;
+    border: black solid 1px;
+}
+
+.navbut {
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    padding-right: calc(0.5rem + 10vw);
+    background-color: hsl(210, 100%, 50%);
+    border-radius: 10%;
+    border: none;
+}
+
+.navbut:hover {
+    color:hsl(210, 100%, 50%);
+    background-color: white;
+}
+
+.navbut:active {
+    border: black solid 1px;
+}
