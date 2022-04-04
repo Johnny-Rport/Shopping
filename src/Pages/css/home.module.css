@@ -1,0 +1,59 @@
+.header {
+    text-align: center;
+    background-color: hsl(200, 100%, 50%);
+}
+
+.grid {
+    display: grid;
+    align-self: center;
+    margin: 1vw 10vw;
+    grid-gap: 2vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+ .grid div {
+    border: solid 1px black;
+    border-radius: 5%;
+    padding: 10px;
+}
+
+ .content {
+    margin: 1vw;   
+}
+
+ .link {
+    text-decoration: none;
+    left: 1.0vw;
+    bottom: 10vh;
+    position: relative;
+    color: black;
+    background-color: hsl(190, 100%, 80%);
+    border-radius: 10%;
+}
+
+ .link:hover {
+    color:hsl(210, 100%, 50%);
+    background-color: white;
+}
+
+ .grid1 img {
+    border-radius: 5%;
+    content: url(/src/image/item.png);
+    width: 20vw;
+    border: 1px solid black;
+}
+
+ .grid2 img {
+    border-radius: 5%;
+    content: url(/src/image/food.png);
+    width: 20vw;
+    border: 1px solid black;
+}
+
+ .grid3 img {
+    border-radius: 5%;
+    content: url(/src/image/sale.png);
+    width: 20vw;
+    border: 1px solid black;
+}
