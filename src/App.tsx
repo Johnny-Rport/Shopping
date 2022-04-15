@@ -5,6 +5,7 @@ import {Outlet} from 'react-router-dom'
 
 // Components to make:
 // Buy Handler for button across shop
+// Detailed description button that is next to 'Buy Now!' button
 // Weight Calc (Seperate: food, items, and total for items, show each individual weight too)
 // Price Calc (Maybe add sorting options? Don't forget sales)
 // Cart will act like a todo list (Options to delete, mark as gift?, undo, redo, edit quantity)
