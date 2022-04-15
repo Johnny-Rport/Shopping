@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Home from './Pages/Home';
@@ -8,9 +8,11 @@ import Food from './Pages/Food';
 import Sales from './Pages/Sales'
 import Cart from './Pages/Cart';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+const app = document.getElementById('root')
+const root = createRoot(app!)
 
 
-ReactDOM.render(
+root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/shopping' element={<App />}>
@@ -22,5 +24,5 @@ ReactDOM.render(
       </Route>
     </Routes>
   </BrowserRouter>,
-  document.getElementById('root')
 );
+ 

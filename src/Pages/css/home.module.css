@@ -3,6 +3,25 @@
     background-color: hsl(200, 100%, 50%);
 }
 
+.buyBut {
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: hsl(210, 100%, 50%);
+    border-radius: 10%;
+    border: none;
+}
+
+.buyBut:hover {
+    color:hsl(210, 100%, 50%);
+    background-color: white;
+}
+
+.buyBut:active {
+    border: 1px solid black
+
+}
+
 .grid {
     display: grid;
     align-self: center;
@@ -37,23 +56,8 @@
     background-color: white;
 }
 
- .grid1 img {
+ .grid img {
     border-radius: 5%;
-    content: url(/src/image/item.png);
-    width: 20vw;
-    border: 1px solid black;
-}
-
- .grid2 img {
-    border-radius: 5%;
-    content: url(/src/image/food.png);
-    width: 20vw;
-    border: 1px solid black;
-}
-
- .grid3 img {
-    border-radius: 5%;
-    content: url(/src/image/sale.png);
     width: 20vw;
     border: 1px solid black;
 }
