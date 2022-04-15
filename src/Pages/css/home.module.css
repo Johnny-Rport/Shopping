@@ -10,6 +10,9 @@
     background-color: hsl(210, 100%, 50%);
     border-radius: 10%;
     border: none;
+    width: 10vw;
+    font-size: large;
+    
 }
 
 .buyBut:hover {
@@ -38,7 +41,8 @@
 }
 
  .content {
-    margin: 1vw;   
+    margin: 1vw; 
+    font-size: 1.5vw;  
 }
 
  .link {
