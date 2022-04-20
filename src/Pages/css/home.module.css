@@ -65,3 +65,8 @@
     width: 10vw;
     border: 1px solid black;
 }
+
+
+.list ul {
+    padding: 10px;
+}
