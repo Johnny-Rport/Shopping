@@ -32,16 +32,17 @@ a {
 .altmenu {
     border: none;
     color: transparent;
-    background-color: hsl(190, 100%, 50%);
+    background-color: hsl(210, 100%, 50%);
     background-image: url(./menu.png);
     background-size: 100% 100%;
     padding: 0.2rem;
-    margin-right: 6rem;
     border-radius: 10%;
+    position: absolute;
+    top: 2.5%;
 }
 
 .altmenu:hover {
-    background-color: hsl(210, 100%, 50%);
+    background-color: white;
 }
 
 .altmenu:active {

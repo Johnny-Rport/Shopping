@@ -12,7 +12,7 @@
     border: none;
     width: 10vw;
     font-size: large;
-    
+    position: relative;
 }
 
 .buyBut:hover {
@@ -42,17 +42,17 @@
 
  .content {
     margin: 1vw; 
-    font-size: 1.5vw;  
+    font-size: 1vw;  
 }
 
  .link {
     text-decoration: none;
-    left: 1.0vw;
-    bottom: 10vh;
     position: relative;
     color: black;
     background-color: hsl(190, 100%, 80%);
     border-radius: 10%;
+    bottom: 20%;
+    left: 2%;
 }
 
  .link:hover {
@@ -62,6 +62,6 @@
 
  .grid img {
     border-radius: 5%;
-    width: 20vw;
+    width: 10vw;
     border: 1px solid black;
 }

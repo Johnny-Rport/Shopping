@@ -2,29 +2,23 @@ import { useState} from 'react'
 import { Link } from 'react-router-dom'
 import './css/nav.css'
 
-// Make a lock system that keeps or dynamically hides navbar depending on mouse hover
+
 function Navbar() {
     const [menuOpen, setMenu] = useState(false)
-    const [navopen, setNav] = useState(false)
     const [navButs, setHide] = useState(false)
     let menuClass = menuOpen ? 'menu': 'altmenu' 
-
-    const openNav = () => {
-        return navopen ? {}: {backgroundColor: 'transparent'}
-    }
 
     const hideNav = () => {
         return navButs ? {}: {display: 'none'}
     }
 
     const menuclicked = () => {
-        setNav(!navopen)
         setMenu(!menuOpen)
         setHide(!navButs)
     }
 
     return(
-        <div style={openNav()} className='header' >
+        <div  className='header' >
             <button className={menuClass} onClick={menuclicked}>menu</button>
             <Link to='/shopping' style={hideNav()}><button className='navbut'>Home</button></Link>
             <Link to='Items' style={hideNav()}><button className='navbut'>Items</button></Link>
