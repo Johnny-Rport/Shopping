@@ -1,16 +1,37 @@
 import React from 'react'
 
-interface item_in_cart {
-    item?: string
-    quantity?: number
+interface item {
+    key: string
+    quantity: number
 }
 
-let items_in_cart:item_in_cart = {}
+export let items_in_cart: {key: string, quantity: number}[] = []
 
-export function Product(item: string)
+
+export function Add_product(key: string, quantity: number)
 {
-    // This doesn't work, but improve interface to get data more smoothly
-    // This will store what items have been put into cart, does not record quantity yet, and it will transfer data to cart, figure out objects
-    // items_in_cart[item] = 1
-    console.log(items_in_cart)
+    let item: item = {
+        key: key,
+        quantity: quantity,
+    }
+
+    items_in_cart.push(item)
+
+    // This method adds quantities together and prevents duplicates
+    if (items_in_cart.length > 1) {add_and_check(key, quantity)} 
+    
+    return console.log(items_in_cart) //Helps keep track, otherwise, its useless
+}
+
+
+function add_and_check(key: string, quantity: number) 
+{
+    for (let i = 0; i < items_in_cart.length; i++) {
+        const element = items_in_cart[i];
+        if (key === element.key) {
+            element.quantity += quantity
+            items_in_cart.pop()
+        }
+        break
+    } 
 }

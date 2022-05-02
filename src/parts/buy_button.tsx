@@ -1,25 +1,26 @@
 import React, { useRef } from 'react';
 import style from '../Pages/css/home.module.css'
-import { Product } from './product_handler';
+import { Add_product} from './product_handler';
 
 function Buybtn(){
     const button = useRef<HTMLInputElement>(null)
     const quantity = useRef<HTMLInputElement>(null)
 
     // Sends clicked item to product handler and keeps track of what is clicked
-    function grabParent() {
-        let a = button.current!.parentElement!.id
-        let b = quantity.current!.value
-        console.log(a)
-        console.log(b)
+    function grabItem() {
+        let key = button.current!.parentElement!.id
+        let qnty = quantity.current!.valueAsNumber
+        if (qnty < 0 || isNaN(qnty) || qnty === 0){ quantity.current!.value = '0'; return qnty = 0} // Prevents negatives, strings, or a zero from being accepted
+        else{Add_product(key, qnty)}
+        
     }
 
     
 
     return (
         <React.Fragment>
-            <input ref={button} type='button' className={style.buyBut} value='Buy Now!' onClick={grabParent}/>  
-            <input ref={quantity} type='number' className={style.numBtn} placeholder='Quantity' />
+            <input ref={button} type='button' className={style.buyBut} value='Buy Now!' onClick={grabItem}/>  
+            <input ref={quantity} type='number'  className={style.numBtn} placeholder='Quantity' />
         </React.Fragment>
     )
 }

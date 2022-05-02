@@ -13,27 +13,27 @@ function Food() {
     <div>
       <h1 className={style.header}>Premium Foods!</h1>
       <div className={style.grid}>
-          <div id='apple'>
+          <div id='Apple'>
             <img src={apple} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}>These Premium Apples are freshly picked from our local farms! They bring a delight like no other by hindering both hunger and thirst.</p>
           </div>
-          <div id='banana'>
+          <div id='Banana'>
             <img src={banana} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}> We're bringing back our Premium Bananas! Like many of our foods, they are fresh and sourced from local farms and guaranteed to bring satisfaction. </p>
           </div>
-          <div id='watermelon'>
+          <div id='Watermelon'>
             <img src={watermelon} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}>One of our most recognizable and beloved fruits are the Premium Watermelons! They can feed entire parties leaving everybody with a full belly.</p>
           </div>
-          <div id='meat'>
+          <div id='Meat'>
             <img src={meat} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}>Enjoy the delight and divine taste of the Premium Meat. We take great pride in providing the best meats to our customers!</p>
           </div>
-          <div id='soda'>
+          <div id='Soda'>
             <img src={soda} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}>Having an unquenchable thirst? Don't worry for our Premium Sodas are the perfect beverages to quench any thirst of any size!</p>
           </div>
-          <div id='water'>
+          <div id='Water'>
             <img src={water} alt='looks like its broken'></img> <Buybtn/>
             <p className={style.content}>Want something healthier? Our Premium Water collected from the very clouds themselves offer a drinking experience like no other!</p>
           </div>
