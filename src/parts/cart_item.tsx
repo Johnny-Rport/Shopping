@@ -13,27 +13,35 @@ function Cartitem(){
         </div>
     )
 }
-
+// TODO Everything works, the bug is fixed, but this function is being picky about what to display, fix it, it is a dictionary not an array
 function DisplayItems(){
     // This function replaces list if there are no items
+    // let keys: string[] = []
     function check() {
-        if (items_in_cart.length === 0) {
+        if (items_in_cart.size === 0) {
             return "There are no items in your cart. Do not worry, take your time!"
+        } else {
+            // keys = []
+            for (const item of items_in_cart.entries()) {
+                // keys.push(item[0])
+                return(<li>{item[0]}</li>)
+            }
+
         }
     }
 
     return(
-        <React.Fragment>{           
-            items_in_cart.map((item)=> //Displays all items in the cart
-                {
-                return(<li key={item.key}>{item.key} <Detailbtn/></li>)
-                })} 
+        <React.Fragment>
+            {/* {keys.map((name)=> {
+                return( <li>{name}</li>)
+            })} */}
             {check()} 
         </React.Fragment>
     )
 }
 
 function Detailbtn(){
+    // Add a new description trait so when item is passed to product handler it also carries its description with it. simple
     return(
         <React.Fragment>
             <button>Details</button>

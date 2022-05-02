@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "downlevelIteration": true,
+    "importHelpers": true,
     "lib": [
       "dom",
+      "es5",
       "dom.iterable",
       "esnext"
     ],

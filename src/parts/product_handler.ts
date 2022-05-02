@@ -1,35 +1,21 @@
-interface item {
-    key: string
-    quantity: number
-}
-
-export let items_in_cart: {key: string, quantity: number}[] = []
+export let items_in_cart: Map<string, {quantity: number}> = new Map()
 
 
 export function Add_product(key: string, quantity: number)
 {
-    let item: item = {
-        key: key,
-        quantity: quantity,
+    // This method adds quantities together and prevents duplicates
+    if (items_in_cart.has(key)) {
+        let sum = items_in_cart.get(key)!.quantity
+        sum = sum + quantity
+        items_in_cart.set(key, {quantity: sum})
+    } else {
+        items_in_cart.set(key, {quantity: quantity})
+    }
+    
+    console.clear() //Helps keep track, otherwise, its useless
+    for (const item of items_in_cart.entries()) { 
+        console.log(`Entry: ${item[0]}, Quantity: ${item[1].quantity}`)
     }
 
-    items_in_cart.push(item)
-
-    // This method adds quantities together and prevents duplicates
-    if (items_in_cart.length > 1) {add_and_check(key, quantity)} 
     
-    return console.log(items_in_cart) //Helps keep track, otherwise, its useless
-}
-
-
-function add_and_check(key: string, quantity: number) 
-{
-    for (let i = 0; i < items_in_cart.length; i++) {
-        const element = items_in_cart[i];
-        if (key === element.key) {
-            element.quantity += quantity
-            items_in_cart.pop()
-        }
-        break
-    } 
 }
