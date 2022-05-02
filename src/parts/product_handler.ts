@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface item {
     key: string
     quantity: number
