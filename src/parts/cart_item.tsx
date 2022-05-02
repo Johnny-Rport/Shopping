@@ -15,6 +15,7 @@ function Cartitem(){
 }
 
 function DisplayItems(){
+    // This function replaces list if there are no items
     function check() {
         if (items_in_cart.length === 0) {
             return "There are no items in your cart. Do not worry, take your time!"
@@ -23,11 +24,11 @@ function DisplayItems(){
 
     return(
         <React.Fragment>{           
-            items_in_cart.map((item)=> 
+            items_in_cart.map((item)=> //Displays all items in the cart
                 {
                 return(<li key={item.key}>{item.key} <Detailbtn/></li>)
                 })} 
-            {check()}
+            {check()} 
         </React.Fragment>
     )
 }
