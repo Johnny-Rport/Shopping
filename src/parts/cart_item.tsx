@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../Pages/css/home.module.css'
-import { keys, quantity } from './product_handler';
+import { keys, descr } from './product_handler';
 
 function Cartitem(){
     return (
@@ -36,9 +36,26 @@ function DisplayItems(){
 
 function Detailbtn(){
     // TODO Add a new description trait so when item is passed to product handler it also carries its description with it. simple
+    const [display_descr, setDisplay] = useState(false)
+    let name: string
+
+    function detail_clicked(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        setDisplay(!display_descr)
+        name = event.currentTarget.parentElement?.firstChild?.nodeValue!
+        content()
+    }
+
+    const content = () => {
+        if (display_descr) {return 'details'}
+        else if(!display_descr){return keys.map((key, index)=> {
+            if (name === key) {return console.log(descr[index])}
+        })}
+    }
+
     return(
         <React.Fragment>
-            <button>Details</button>
+            {/* <button onClick={detail_clicked}>{content}</button> */}
+            <button onClick={detail_clicked}>detail</button>
         </React.Fragment>
     )
 }

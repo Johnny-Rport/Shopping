@@ -10,9 +10,10 @@ function Buybtn(){
     function grabItem() {
         let key = button.current!.parentElement!.id
         let qnty = quantity.current!.valueAsNumber
+        let description = quantity.current!.nextElementSibling!.textContent!
+
         if (qnty < 0 || isNaN(qnty) || qnty === 0){ quantity.current!.value = '0'; return qnty = 0} // Prevents negatives, strings, or a zero from being accepted
-        else{Add_product(key, qnty)}
-        
+        else{Add_product(key, qnty, description)}
     }
 
     

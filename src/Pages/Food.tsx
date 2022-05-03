@@ -19,7 +19,7 @@ function Food() {
           </div>
           <div id='Banana'>
             <img src={banana} alt='looks like its broken'></img> <Buybtn/>
-            <p className={style.content}> We're bringing back our Premium Bananas! Like many of our foods, they are fresh and sourced from local farms and guaranteed to bring satisfaction. </p>
+            <p className={style.content}>We're bringing back our Premium Bananas! Like many of our foods, they are fresh and sourced from local farms and guaranteed to bring satisfaction. </p>
           </div>
           <div id='Watermelon'>
             <img src={watermelon} alt='looks like its broken'></img> <Buybtn/>
