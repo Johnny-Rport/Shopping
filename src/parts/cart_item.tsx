@@ -5,11 +5,10 @@ import { keys, descr } from './product_handler';
 function Cartitem(){
     return (
         <div className={style.list}> <h4>Items in Cart</h4>
+        <aside>Click for details!</aside>
             <ul>
                 <DisplayItems/>
             </ul>
-
-            <div>Template above: Lists items (without quantity) followed by button that will give item description in the item page in a format like this</div>
         </div>
     )
 }
@@ -21,7 +20,8 @@ function DisplayItems(){
         if (keys.length === 0) {
             return "There are no items in your cart. Do not worry, take your time!"
         } else if (keys.length !== 0) {
-            return keys.map((name)=> {
+            return keys.map((name, index)=> {
+                
                 return(<li key={name}>{name} <Detailbtn/></li>)
             })
         } 
@@ -35,27 +35,24 @@ function DisplayItems(){
 }
 
 function Detailbtn(){
-    // TODO Add a new description trait so when item is passed to product handler it also carries its description with it. simple
     const [display_descr, setDisplay] = useState(false)
-    let name: string
 
+    // Retrieves element, parent element for accurate description, and outputs it
     function detail_clicked(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         setDisplay(!display_descr)
-        name = event.currentTarget.parentElement?.firstChild?.nodeValue!
-        content()
-    }
+        let key = event.currentTarget.parentElement?.firstChild?.nodeValue! //Parent Element Item       
 
-    const content = () => {
-        if (display_descr) {return 'details'}
-        else if(!display_descr){return keys.map((key, index)=> {
-            if (name === key) {return console.log(descr[index])}
+        if (display_descr) {return event.currentTarget.textContent! = 'Details' } // Default State, if not clicked
+        else if(!display_descr){return keys.map((name, index) => { //If clicked Display corresponding descriptions
+            if (name === key) {
+                event.currentTarget.textContent! = descr[index]
+            }
         })}
     }
 
     return(
         <React.Fragment>
-            {/* <button onClick={detail_clicked}>{content}</button> */}
-            <button onClick={detail_clicked}>detail</button>
+            <button onClick={detail_clicked}>Details</button>
         </React.Fragment>
     )
 }
