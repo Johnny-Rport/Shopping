@@ -30,12 +30,12 @@ function record_products() {
         keys.push(item[0])
     }
 
-    quantity = [] //Records each quantity (aligns with product index)
+    quantity = [] //Records each quantity (aligns with key index)
     for (const item of items_in_cart.entries()) {
         quantity.push(item[1].quantity)
     }
 
-    descr = [] //Records each descriptions (aligns with product index)
+    descr = [] //Records each descriptions (aligns with key index)
     for (const item of items_in_cart.entries()) {
         descr.push(item[1].description)
     }

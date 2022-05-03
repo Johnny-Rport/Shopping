@@ -5,7 +5,7 @@ import { keys, descr } from './product_handler';
 function Cartitem(){
     return (
         <div className={style.list}> <h4>Items in Cart</h4>
-        <aside>Click for details!</aside>
+        <aside>Click for the descriptions of the items!</aside>
             <ul>
                 <DisplayItems/>
             </ul>
