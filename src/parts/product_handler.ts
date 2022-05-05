@@ -15,14 +15,11 @@ export function Add_product(key: string, quantity: number, descr: string, price:
         items_in_cart.set(key, {quantity: quantity, description: descr, price: price})
     }
     
-
     record_products()
     console.clear() //Helps keep track, otherwise, its useless
     for (const item of items_in_cart.entries()) { 
-        console.log(`Entry: ${item[0]}, Quantity: ${item[1].quantity}, Price: $${item[1].price}`)
-    }
-
-    
+        console.log(`Entry: ${item[0]} x ${item[1].quantity} = Price: $${item[1].price * item[1].quantity}`)
+    }    
 }
 
 function record_products() {

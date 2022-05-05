@@ -1,19 +1,56 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import style from '../Pages/css/home.module.css'
+import { keys, price, quantity } from './product_handler';
 
 function Cartquantity(){
     return (
         <div className={style.list}> <h4>Quantity of Items</h4>
-        <ul>In Total, you have (# of items) with a total of $</ul>
-        <ul>
-            <li>Vaccum x 1 = (Total) price</li>
-            <li>Broom x 2 = (Total) price</li>
-            <li>Sode x 3 = (Total) price</li>
-            <li>Laptop x 1 = (Total) price</li>
-        </ul>
-
-            <aside>Quantity breakdown here, shows true list where quantity can be seen and price, not detailed but general sum</aside>
+        <DisplayTotal/>
+        <DisplayQuantity/>
         </div>
+    )
+}
+
+function DisplayTotal(){
+    let total_quantity: number = 0;
+    let total_price: number = 0;
+
+   function sum(value: string) {
+        if (value === 'quantity') {
+            quantity.map((value) => {
+                total_quantity += value
+            })
+            return total_quantity
+            
+        } else if(value === 'price') {
+            price.map((value, index) => {
+                total_price += (value * quantity[index])
+            })
+            return total_price
+        }
+   }
+
+    return(
+        <aside>In Total, you have {sum('quantity')} items in your cart. With a total of ${sum('price')}.</aside>
+    )
+}
+
+function DisplayQuantity() {
+    // Checks list and updates list accordingly
+    function check_list() {
+        if (keys.length === 0) {return 'You have a cost-free cart. No charging here!'}
+        else if (keys.length !== 0) {
+            return keys.map((name, index) => {
+                return(<li key={name}>{name} x {quantity[index]} = ${price[index] * quantity[index]}</li>)
+            })
+        }
+    } 
+    
+
+    return(
+        <Fragment>
+            <ul>{check_list()}</ul>
+        </Fragment>
     )
 }
 
