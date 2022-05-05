@@ -6,10 +6,12 @@
 .numBtn {
     font-size: medium;
     background-color: transparent;
-    width: 50%;
+    width: 95%;
     padding: 0.5vw;
     border: black solid 1px;
     border-radius: 10%;
+    position: relative;
+    bottom: 3vh;
 }
 
 .buyBut {
@@ -21,7 +23,8 @@
     border: none;
     width: 10vw;
     font-size: large;
-    position: absolute;
+    position: relative;
+    bottom: 15%
 }
 
 .buyBut:hover {
