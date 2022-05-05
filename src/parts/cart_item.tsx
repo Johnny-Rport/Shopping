@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import style from '../Pages/css/home.module.css'
 import { keys, descr } from './product_handler';
 
@@ -20,7 +20,7 @@ function DisplayItems(){
         if (keys.length === 0) {
             return "There are no items in your cart. Do not worry, take your time!"
         } else if (keys.length !== 0) {
-            return keys.map((name, index)=> {
+            return keys.map((name)=> {
                 
                 return(<li key={name}>{name} <Detailbtn/></li>)
             })
@@ -36,26 +36,29 @@ function DisplayItems(){
 
 function Detailbtn(){
     const [display_descr, setDisplay] = useState(false)
+    const element = useRef<HTMLButtonElement>(null)
+    let [content, setContent] = useState('Details')
+    let key = element.current?.parentElement?.firstChild?.textContent! //Parent Key
+    
+    useEffect(()=> {
+        detail_clicked()
+    })
 
-    // Retrieves element, parent element for accurate description, and outputs it
-    function detail_clicked(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-        setDisplay(!display_descr)
-        let key = event.currentTarget.parentElement?.firstChild?.nodeValue! //Parent Element Item       
-
-        if (display_descr) {return event.currentTarget.textContent! = 'Details' } // Default State, if not clicked
-        else if(!display_descr){return keys.map((name, index) => { //If clicked Display corresponding descriptions
+    // Checks for button state, Aligns with Parent element for accurate description, and outputs it
+    function detail_clicked() {
+        if (!display_descr) {return setContent(content = 'Details') } // Default State, if not clicked
+        else if(display_descr){return keys.map((name, index) => { //If clicked Display corresponding description
             if (name === key) {
-                event.currentTarget.textContent! = descr[index]
-            }
+                setContent(content = descr[index])
+            }        
         })}
     }
 
     return(
         <React.Fragment>
-            <button onClick={detail_clicked}>Details</button>
+            <button ref={element} onClick={() => {setDisplay(!display_descr)}}>{content}</button>
         </React.Fragment>
     )
 }
-
 
 export default Cartitem
