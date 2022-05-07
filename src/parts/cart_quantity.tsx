@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment} from 'react';
 import style from '../Pages/css/home.module.css'
 import { keys, price, quantity } from './product_handler';
 
@@ -26,12 +26,12 @@ function DisplayTotal(){
             price.map((value, index) => {
                 total_price += (value * quantity[index])
             })
-            return total_price
+            return total_price.toFixed(2)
         }
    }
 
     return(
-        <aside>In Total, you have {sum('quantity')} items in your cart. With a total of ${sum('price')}.</aside>
+        <aside>You have {sum('quantity')} items in your cart. With a total of ${sum('price')}.</aside>
     )
 }
 

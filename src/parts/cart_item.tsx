@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import style from '../Pages/css/home.module.css'
 import { keys, descr } from './product_handler';
 
+interface prop {
+    id: string
+    description: string
+}
+
 function Cartitem(){
     return (
         <div className={style.list}> <h4>Items in Cart</h4>
@@ -20,9 +25,9 @@ function DisplayItems(){
         if (keys.length === 0) {
             return "There are no items in your cart. Do not worry, take your time!"
         } else if (keys.length !== 0) {
-            return keys.map((name)=> {
+            return keys.map((name, index)=> {
                 
-                return(<li key={name}>{name} <Detailbtn/></li>)
+                return(<li key={name}>{name} <Detailbtn id={name} description={descr[index]} /></li>)
             })
         } 
     }
@@ -34,11 +39,9 @@ function DisplayItems(){
     )
 }
 
-function Detailbtn(){
+function Detailbtn(prop: prop){
     const [display_descr, setDisplay] = useState(false)
-    const element = useRef<HTMLButtonElement>(null)
     let [content, setContent] = useState('Details')
-    let key = element.current?.parentElement?.firstChild?.textContent! //Parent Key
     
     useEffect(()=> {
         detail_clicked()
@@ -47,16 +50,16 @@ function Detailbtn(){
     // Checks for button state, Aligns with Parent element for accurate description, and outputs it
     function detail_clicked() {
         if (!display_descr) {return setContent(content = 'Details') } // Default State, if not clicked
-        else if(display_descr){return keys.map((name, index) => { //If clicked Display corresponding description
-            if (name === key) {
-                setContent(content = descr[index])
+        else if(display_descr){return keys.map((name) => { //If clicked Display corresponding description
+            if (name === prop.id) {
+                setContent(content = prop.description)
             }        
         })}
     }
 
     return(
         <React.Fragment>
-            <button ref={element} onClick={() => {setDisplay(!display_descr)}}>{content}</button>
+            <button onClick={() => {setDisplay(!display_descr)}}>{content}</button>
         </React.Fragment>
     )
 }
