@@ -82,3 +82,19 @@
 .list ul {
     padding: 10px;
 }
+
+.price_grid {
+    border-radius: 5%;
+    display: grid;
+    align-self: center;
+    margin: 1vh;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+}
+
+.price_grid section {
+    padding: 10px;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+}
