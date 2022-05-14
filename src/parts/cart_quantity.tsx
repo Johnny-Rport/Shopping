@@ -12,19 +12,19 @@ function Cartquantity(){
 }
 
 function DisplayTotal(){
-    let total_quantity: number = 0;
-    let total_price: number = 0;
+    let total_quantity = 0;
+    let total_price = 0;
 
    function sum(value: string) {
         if (value === 'quantity') {
             quantity.map((value) => {
-                total_quantity += value
+                return total_quantity += value
             })
             return total_quantity
             
         } else if(value === 'price') {
             price.map((value, index) => {
-                total_price += (value * quantity[index])
+                return total_price += (value * quantity[index])
             })
             return total_price.toFixed(2)
         }

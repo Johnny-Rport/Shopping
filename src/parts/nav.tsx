@@ -2,7 +2,7 @@ import { useState} from 'react'
 import { Link } from 'react-router-dom'
 import './css/nav.css'
 
-
+// TODO: Make the navbar nonreliant on the button and more reliant on mouse hover
 function Navbar() {
     const [menuOpen, setMenu] = useState(false)
     const [navButs, setHide] = useState(false)
