@@ -1,72 +1,48 @@
 .header {
-    font-size: x-large;
     margin: 0;
-    padding: 0.5rem;
+    padding: 0rem 0.5rem;
     background-color: hsl(200, 100%, 50%);
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 14vh;
+    top: -12vh;
+    opacity: 0%;
+    transition: 1s;
 }
+
+.header:hover {
+    transition: 1s;
+    opacity: 100%;
+    top: 0vh;
+    padding-bottom: 0.5vh;
+    
+}
+
 
 a {
     background-color: transparent;
 }
 
-.menu {
-    border: none;
-    color: transparent;
-    background-color: hsl(210, 100%, 50%);
-    background-image: url(./menu.png);
-    background-size: 100% 100%;
-    padding: 0.2rem;
-    margin-right: 6rem;
-    border-radius: 10%;
-}
-
-.menu:hover {
-    background-color: white;
-}
-
-.menu:active {
-    padding: 0.1vw;
-    border: black solid 1px;
-}
-
-.altmenu {
-    border: none;
-    color: transparent;
-    background-color: hsl(210, 100%, 50%);
-    background-image: url(./menu.png);
-    background-size: 100% 100%;
-    padding: 0.2rem;
-    border-radius: 10%;
-    position: absolute;
-    top: 2.5%;
-}
-
-.altmenu:hover {
-    background-color: white;
-}
-
-.altmenu:active {
-    padding: 0.1vw;
-    border: black solid 1px;
-}
-
-
-
-.navbut {
+.navbtn {
+    font-size: calc(10px + 0.5vh);
     color: white;
     margin: 0.5rem;
-    padding: 0.5rem;
-    padding-right: calc(0.5rem + 10vw);
+    padding: 0.5rem calc(0.5rem + 5vw);
     background-color: hsl(210, 100%, 50%);
     border-radius: 10%;
     border: none;
+    transition: 1s;
 }
 
-.navbut:hover {
+.navbtn:hover {
     color:hsl(210, 100%, 50%);
     background-color: white;
+    transition: 800ms;
+
 }
 
-.navbut:active {
+.navbtn:active {
     border: black solid 1px;
 }
